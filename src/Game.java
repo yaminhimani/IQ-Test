@@ -49,6 +49,12 @@ public void start(){
     int correctAns=0;
     for(int i=0;i<questions.size();i++){
         System.out.println(questions.get(i).getQuestion());   //this loop goes through the array list and shows the questions
+        int answerChoices=questions.get(i).getAnswerChoicesList().size();  //gets the number of choices
+
+        for(int j=0;j<answerChoices;j++){
+            System.out.println((j+1)+ ": "+ questions.get(j).getAnswerChoicesList().get(j));
+        }
+        String userAnswer=scan.nextLine().toLowerCase();
     }
 }
 
