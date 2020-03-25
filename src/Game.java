@@ -54,8 +54,16 @@ public void start(){
         for(int j=0;j<answerChoices;j++){
             System.out.println((j+1)+ ": "+ questions.get(j).getAnswerChoicesList().get(j));
         }
-        String userAnswer=scan.nextLine().toLowerCase();
+        String userAnswer=scan.nextLine().toLowerCase();    //this is the answer the user enters it will be converted to lowercase each time
+        ArrayList<String> choices=questions.get(i).getAnswerChoicesList();
+        String rightAns=questions.get(i).getAnswer();
+       if(rightAns==userAnswer){
+           correctAns++;
+       }
+
     }
+    scan.close();
+    System.out.println("You got "+ correctAns+ "correct answers");
 }
 
 }
