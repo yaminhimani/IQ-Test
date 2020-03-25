@@ -12,14 +12,14 @@ public class Game {
         questions= new ArrayList<Questions>(); //creating new array list of questions
         String question="What is 20 percent of 30 Dollars?";  //1
         String[] answers= {"Enter the correct answer "};
-        questions.add(new Questions(question,answers,"30"));
+        questions.add(new Questions(question,answers,"6"));
         question="Which of the follwing can be aranged into a 5-letter engligh word";  //2
         answers=  new String[]{"MULTIPLE ANSWERS. ENTERS LETTERS TOGETHER  if answer is a and c enter AC","A.  H R G S T ", "B.  R I L S A","C.  T O O M T ", "D.  W Q R G S" };  //must use new keyword since we are not initializing here
         questions.add(new Questions(question,answers," BC"));
         question="Book is to reading as Fork is to "; //3
         answers= new String[]{"A. drawing","B. writing", "C. stirring", "D. eating"};
         questions.add(new Questions(question,answers,"D"));
-        question= "If there are 6 apples ans you take away four how many do you have? "; //4
+        question= "If there are 6 apples ans you take away 4 how many do you have? "; //4
         answers= new String[]{"Enter the correct answer "};
         questions.add(new Questions(question,answers,"4")); //5
         question="Finger is to hand as Leaf is to?";
@@ -36,7 +36,7 @@ public class Game {
         questions.add(new Questions(question,answers,"B"));
         question="What is the meaning of the phrase \"A rolling stone gathers no moss \""; //9
         answers= new String[]{"A. Continuing is better than quitting with something", "B. Someone who does not settle" +
-                "in one place rarley prospers ","C. Experience is growing over the years"," D. Moving parts do not rust"};
+                "in one place rarley prospers ","C. Experience is growing over the years","D. Moving parts do not rust"};
         questions.add(new Questions(question,answers,"B"));
         question="Which sentance is correct? \"Who's cat is this? \" or \" Whose cat is this\""; //10
         answers=new String[]{"A.\"Who's cat is this? \" ", "B.\" Whose cat is this\"\""};
