@@ -48,7 +48,7 @@ public void start(){
     Scanner scan= new Scanner(System.in);
     int correctAns=0;
     for(int i=0;i<questions.size();i++){
-        System.out.println(questions.get(i).getQuestion());   //this loop goes through the array list and shows the questions
+        System.out.println(i+1 +" . "+questions.get(i).getQuestion());   //this loop goes through the array list and shows the questions
         int answerChoices=questions.get(i).getAnswerChoicesList().size();  //gets the number of choices
 
         for(int j=0;j<answerChoices;j++){
@@ -57,9 +57,10 @@ public void start(){
         String userAnswer=scan.nextLine().toUpperCase();    //this is the answer the user enters it will be converted to uppercase each time
         ArrayList<String> choices=questions.get(i).getAnswerChoicesList();
         String rightAns=questions.get(i).getAnswer();
-        System.out.println(rightAns);
+       // System.out.println(rightAns);
 
-       if(userAnswer.equals(rightAns)){
+       if(userAnswer.equals(rightAns)){         /**if the answer entered by the user and correct answer are the same number of
+                                                         correct answers increments by one */
 
            correctAns++;
 
@@ -68,6 +69,10 @@ public void start(){
     }
     scan.close();
     System.out.println("You got "+ correctAns+ " correct answers");
+
+    System.out.println("Scoring System: \n" +
+            "10 Correct 150-200 (Genius)\n 9 Correct 140-149 \n 8 Correct 130-139 \n 7 Correct 120-129 \n 6 Correct 110-119\n 5 Correct 100-109 (Average) \n 4 Correct 90-99\n 3 Correct 80-89\n 2 Correct 70-79\n 1 Correct 60-69\n 0 Correct 0-59 (Not Good)");
+
 }
 
 
