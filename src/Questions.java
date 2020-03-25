@@ -12,6 +12,7 @@ public class Questions {
             for(int i=0;i< answerChoices.length;i++){                          //this loop takes the answer choices and puts it in the array list
                 this.answerChoicesList.add(answerChoices[i]);
             }
+            this.answer=answer;
     }
 
     public String getQuestion() {

@@ -57,8 +57,12 @@ public void start(){
         String userAnswer=scan.nextLine().toUpperCase();    //this is the answer the user enters it will be converted to uppercase each time
         ArrayList<String> choices=questions.get(i).getAnswerChoicesList();
         String rightAns=questions.get(i).getAnswer();
-       if(rightAns==userAnswer){
+        System.out.println(rightAns);
+
+       if(userAnswer.equals(rightAns)){
+
            correctAns++;
+
        }
 
     }
