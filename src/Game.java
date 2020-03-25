@@ -13,8 +13,8 @@ public class Game {
         String question="What is 20 percent of 30 Dollars?";  //1
         String[] answers= {"Enter the correct answer "};
         questions.add(new Questions(question,answers,"6"));
-        question="Which of the follwing can be aranged into a 5-letter engligh word";  //2
-        answers=  new String[]{"MULTIPLE ANSWERS. ENTERS LETTERS TOGETHER  if answer is a and c enter AC","A.  H R G S T ", "B.  R I L S A","C.  T O O M T ", "D.  W Q R G S" };  //must use new keyword since we are not initializing here
+        question="Which of the follwing can be aranged into a 5-letter engligh word MULTIPLE ANSWERS. ENTERS LETTERS TOGETHER  if answer is a and c enter AC ";  //2
+        answers=  new String[]{"A.  H R G S T ", "B.  R I L S A","C.  T O O M T ", "D.  W Q R G S" };  //must use new keyword since we are not initializing here
         questions.add(new Questions(question,answers," BC"));
         question="Book is to reading as Fork is to "; //3
         answers= new String[]{"A. drawing","B. writing", "C. stirring", "D. eating"};
@@ -50,11 +50,12 @@ public void start(){
     for(int i=0;i<questions.size();i++){
         System.out.println(i+1 +" . "+questions.get(i).getQuestion());   //this loop goes through the array list and shows the questions
         int answerChoices=questions.get(i).getAnswerChoicesList().size();  //gets the number of choices
-
+        System.out.println();
         for(int j=0;j<answerChoices;j++){
             System.out.println(questions.get(i).getAnswerChoicesList().get(j));
         }
-        String userAnswer=scan.nextLine().toUpperCase();    //this is the answer the user enters it will be converted to uppercase each time
+        String userAnswer=scan.nextLine().toUpperCase(); //this is the answer the user enters it will be converted to uppercase each time
+        System.out.println();
         ArrayList<String> choices=questions.get(i).getAnswerChoicesList();
         String rightAns=questions.get(i).getAnswer();
        // System.out.println(rightAns);
@@ -69,6 +70,7 @@ public void start(){
     }
     scan.close();
     System.out.println("You got "+ correctAns+ " correct answers");
+    System.out.println();
 
     System.out.println("Scoring System: \n" +
             "10 Correct 150-200 (Genius)\n 9 Correct 140-149 \n 8 Correct 130-139 \n 7 Correct 120-129 \n 6 Correct 110-119\n 5 Correct 100-109 (Average) \n 4 Correct 90-99\n 3 Correct 80-89\n 2 Correct 70-79\n 1 Correct 60-69\n 0 Correct 0-59 (Not Good)");
