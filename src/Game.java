@@ -14,9 +14,9 @@ public class Game {
         String[] answers= {"Enter the correct answer "};
         questions.add(new Questions(question,answers,"30"));
         question="Which of the follwing can be aranged into a 5-letter engligh word";  //2
-        answers=  new String[]{" A.  H R G S T ", "B.  R I L S A","C.  T O O M T ", " D.  W Q R G S" };  //must use new keyword since we are not initializing here
+        answers=  new String[]{"MULTIPLE ANSWERS. ENTERS LETTERS TOGETHER  if answer is a and c enter AC","A.  H R G S T ", "B.  R I L S A","C.  T O O M T ", "D.  W Q R G S" };  //must use new keyword since we are not initializing here
         questions.add(new Questions(question,answers," BC"));
-        question="Book is to reading as Fork"; //3
+        question="Book is to reading as Fork is to "; //3
         answers= new String[]{"A. drawing","B. writing", "C. stirring", "D. eating"};
         questions.add(new Questions(question,answers,"D"));
         question= "If there are 6 apples ans you take away four how many do you have? "; //4
@@ -29,8 +29,8 @@ public class Game {
         answers=new String[]{"A. Poem","B. Novel","C. Painting", "D. Statue","E. Flower"};
         questions.add(new Questions(question,answers,"E"));
         question="At a meeting of four people they shake hands with each other how many handshakes are possible?"; //7
-        answers=new String[]{"4","5","6","7","8"};
-        questions.add(new Questions(question,answers,"6"));
+        answers=new String[]{"A. 4","B. 5","C. 6","D. 7","E. 8"};
+        questions.add(new Questions(question,answers,"C"));
         question="What is the result of this sum 16 X 63 - 1214?"; //8
         answers= new String[]{"A. 206","B. -206","C. 306","D. 18416"};
         questions.add(new Questions(question,answers,"B"));
@@ -52,9 +52,9 @@ public void start(){
         int answerChoices=questions.get(i).getAnswerChoicesList().size();  //gets the number of choices
 
         for(int j=0;j<answerChoices;j++){
-            System.out.println((j+1)+ ": "+ questions.get(j).getAnswerChoicesList().get(j));
+            System.out.println(questions.get(i).getAnswerChoicesList().get(j));
         }
-        String userAnswer=scan.nextLine().toLowerCase();    //this is the answer the user enters it will be converted to lowercase each time
+        String userAnswer=scan.nextLine().toUpperCase();    //this is the answer the user enters it will be converted to uppercase each time
         ArrayList<String> choices=questions.get(i).getAnswerChoicesList();
         String rightAns=questions.get(i).getAnswer();
        if(rightAns==userAnswer){
@@ -63,7 +63,8 @@ public void start(){
 
     }
     scan.close();
-    System.out.println("You got "+ correctAns+ "correct answers");
+    System.out.println("You got "+ correctAns+ " correct answers");
 }
+
 
 }
